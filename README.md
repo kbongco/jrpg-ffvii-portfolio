@@ -11,19 +11,6 @@ npm run dev
 
 Then open http://localhost:5173
 
-## Customise
-
-All placeholder content lives in `src/components/PortfolioRemake.tsx` (desktop)
-and `src/components/PortfolioMobile.tsx` (mobile).
-
-Search for these strings and replace them:
-- `CLOUD STRIFE` → your name
-- `Full Stack Developer` → your title  
-- `Ex-SOLDIER` bio paragraphs → your actual bio
-- `Midgar` → your location
-- Project card titles (Shinra Dashboard, Avalanche Network, Gold Saucer Arcade) → your projects
-- `href="#"` on the Email / GitHub buttons → your real links
-- Materia slot names → your actual tech stack
 
 ## Design tokens
 
