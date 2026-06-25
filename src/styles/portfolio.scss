@@ -1,0 +1,116 @@
+$dark: #050d12;
+$teal: #00d4e8;
+$teal-dim: rgba(0, 212, 232, 0.2);
+$magenta: #e040c0;
+$white: #f0f8ff;
+$slate: #94a3b8;
+$panel-bg: rgba(5, 13, 18, 0.65);
+$panel-border: rgba(0, 212, 232, 0.3);
+
+.font-rajdhani {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.font-share-tech {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+@mixin remake-panel {
+  background: linear-gradient(135deg, rgba(0, 50, 70, 0.4) 0%, rgba(5, 13, 18, 0.8) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid $panel-border;
+  box-shadow: 0 0 15px rgba(0, 212, 232, 0.1), inset 0 0 20px rgba(0, 212, 232, 0.05);
+}
+
+.remake-theme {
+  background-color: $dark;
+  color: $white;
+}
+
+.remake-panel {
+  @include remake-panel;
+  position: relative;
+}
+
+.remake-cut {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+}
+.remake-cut-tl {
+  clip-path: polygon(16px 0, 100% 0, 100% 100%, 0 100%, 0 16px);
+}
+.remake-cut-both {
+  clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+}
+.remake-cut-tr {
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+}
+
+.text-glow-teal {
+  text-shadow: 0 0 8px rgba(0, 212, 232, 0.6);
+}
+.text-glow-magenta {
+  text-shadow: 0 0 8px rgba(224, 64, 192, 0.6);
+}
+
+.remake-bar-container {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 212, 232, 0.2);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.remake-bar-fill-hp {
+  background: linear-gradient(90deg, #0088aa, #00d4e8);
+  box-shadow: 0 0 10px rgba(0, 212, 232, 0.5);
+  transition: width 1s ease-out;
+}
+
+.remake-bar-fill-mp {
+  background: linear-gradient(90deg, #0055aa, #0088ff);
+  box-shadow: 0 0 10px rgba(0, 136, 255, 0.5);
+  transition: width 1s ease-out;
+}
+
+.remake-bar-fill-limit {
+  background: linear-gradient(90deg, #880055, #e040c0);
+  box-shadow: 0 0 10px rgba(224, 64, 192, 0.5);
+  transition: width 1s ease-out;
+}
+
+.materia-orb {
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor, inset 0 0 10px rgba(255,255,255,0.8);
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8) 0%, currentColor 40%, rgba(0,0,0,0.8) 100%);
+}
+
+.materia-magic { color: #22dd22; }
+.materia-command { color: #ddaa22; }
+.materia-support { color: #22aadd; }
+.materia-independent { color: #aa22dd; }
+.materia-summon { color: #dd2222; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 212, 232, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(0, 212, 232, 0.6); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 0.1; }
+  90% { opacity: 0.1; }
+  100% { transform: translateY(1000%); opacity: 0; }
+}
+.remake-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 212, 232, 0.2), transparent);
+  animation: scan-line 4s linear infinite;
+  pointer-events: none;
+}
