@@ -1,6 +1,7 @@
 import { ChevronRight, ArrowRight, Disc, Hexagon, Circle, Shield, Zap, Terminal, Database, Code, Layout, Globe, Mail, Github, Twitter, User, Star } from 'lucide-react';
 import HeroSection from './HeroSection';
 import Profile from './Profile';
+import Status from './Status';
 
 export default function PortfolioRemake() {
   return (
@@ -19,47 +20,7 @@ export default function PortfolioRemake() {
 <HeroSection/>
 
 <Profile/>
-
-        {/* STATUS SCREEN */}
-        <section className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          <div className="md:col-span-4 remake-panel p-6 remake-cut-tl space-y-8 animate-pulse-glow">
-            <h2 className="font-rajdhani text-3xl font-bold tracking-widest border-b border-[#00d4e8]/20 pb-2 mb-6">STATUS</h2>
-            
-            <div className="space-y-6">
-              <StatRow label="Strength" category="Frontend" value={92} />
-              <StatRow label="Magic" category="TypeScript" value={88} />
-              <StatRow label="Vitality" category="DevOps" value={75} />
-              <StatRow label="Spirit" category="Design" value={95} />
-              <StatRow label="Luck" category="Debugging" value={80} />
-            </div>
-
-            <div className="mt-8 pt-6 border-t border-[#00d4e8]/20 space-y-2">
-              <div className="flex justify-between text-sm">
-                <span className="text-[#e040c0] font-bold tracking-widest text-glow-magenta">LIMIT BREAK</span>
-                <span className="text-white">OMNISLASH</span>
-              </div>
-              <div className="remake-bar-container h-3 w-full skew-x-[-15deg]">
-                <div className="remake-bar-fill-limit h-full w-[100%]" />
-              </div>
-            </div>
-          </div>
-
-          {/* MATERIA LOADOUT */}
-          <div className="md:col-span-8 remake-panel p-6 remake-cut flex flex-col">
-            <h2 className="font-rajdhani text-3xl font-bold tracking-widest border-b border-[#00d4e8]/20 pb-2 mb-6">MATERIA LOADOUT</h2>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1 content-start">
-              <MateriaSlot type="magic" name="React.js" level={5} max={5} />
-              <MateriaSlot type="magic" name="Next.js" level={4} max={5} />
-              <MateriaSlot type="support" name="Tailwind CSS" level={5} max={5} />
-              <MateriaSlot type="command" name="Node.js" level={4} max={5} />
-              <MateriaSlot type="independent" name="PostgreSQL" level={3} max={5} />
-              <MateriaSlot type="summon" name="Docker" level={3} max={5} />
-              <MateriaSlot type="support" name="Framer Motion" level={4} max={5} />
-              <MateriaSlot type="command" name="GraphQL" level={3} max={5} />
-            </div>
-          </div>
-        </section>
+<Status/>
 
         {/* BATTLE LOG / PROJECTS */}
         <section className="space-y-6">
@@ -145,40 +106,6 @@ export default function PortfolioRemake() {
           </div>
         </section>
 
-      </div>
-    </div>
-  );
-}
-
-function StatRow({ label, category, value }: { label: string, category: string, value: number }) {
-  return (
-    <div className="grid grid-cols-[100px_1fr] gap-4 items-center">
-      <span className="text-[#00d4e8] font-bold tracking-widest">{label}</span>
-      <div className="flex items-center gap-3">
-        <span className="text-white w-24 truncate">{category}</span>
-        <div className="flex-1 remake-bar-container h-1.5 skew-x-[-15deg]">
-          <div className="bg-[#00d4e8] h-full shadow-[0_0_8px_#00d4e8]" style={{ width: `${value}%` }} />
-        </div>
-        <span className="text-[#94a3b8] w-8 text-right">{value}</span>
-      </div>
-    </div>
-  );
-}
-
-function MateriaSlot({ type, name, level, max }: { type: 'magic' | 'command' | 'support' | 'independent' | 'summon', name: string, level: number, max: number }) {
-  return (
-    <div className="flex items-center gap-4 bg-black/20 p-2 rounded-sm border border-white/5 hover:border-[#00d4e8]/30 transition-colors group cursor-default">
-      <div className={`w-5 h-5 materia-orb materia-${type} flex-none shrink-0`} />
-      <div className="flex-1 min-w-0">
-        <div className="text-white font-bold tracking-wide truncate group-hover:text-glow-teal transition-all">{name}</div>
-        <div className="flex gap-1 mt-1">
-          {Array.from({ length: max }).map((_, i) => (
-            <div 
-              key={i} 
-              className={`h-1.5 w-4 skew-x-[-15deg] ${i < level ? 'bg-[#00d4e8] shadow-[0_0_5px_#00d4e8]' : 'bg-black/50 border border-white/10'}`} 
-            />
-          ))}
-        </div>
       </div>
     </div>
   );
