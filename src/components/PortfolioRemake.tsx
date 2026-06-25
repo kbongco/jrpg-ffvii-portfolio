@@ -2,6 +2,7 @@ import { ChevronRight, ArrowRight, Disc, Hexagon, Circle, Shield, Zap, Terminal,
 import HeroSection from './HeroSection';
 import Profile from './Profile';
 import Status from './Status';
+import BattleLog from './BattleLog';
 
 export default function PortfolioRemake() {
   return (
@@ -21,32 +22,7 @@ export default function PortfolioRemake() {
 
 <Profile/>
 <Status/>
-
-        {/* BATTLE LOG / PROJECTS */}
-        <section className="space-y-6">
-          <div className="flex items-center gap-4">
-            <h2 className="font-rajdhani text-4xl font-bold tracking-widest text-[#00d4e8] text-glow-teal uppercase">Battle Log</h2>
-            <div className="flex-1 h-[1px] bg-gradient-to-r from-[#00d4e8]/50 to-transparent" />
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <ProjectCard 
-              title="Shinra Dashboard" 
-              desc="Enterprise resource planning and mako reactor analytics dashboard."
-              tech={['React', 'TypeScript', 'Recharts']}
-            />
-            <ProjectCard 
-              title="Avalanche Network" 
-              desc="Secure communication P2P chat app for eco-resistance operatives."
-              tech={['Node.js', 'WebSockets', 'Crypto']}
-            />
-            <ProjectCard 
-              title="Gold Saucer Arcade" 
-              desc="Collection of web-based mini-games with global leaderboards."
-              tech={['Canvas API', 'Next.js', 'Redis']}
-            />
-          </div>
-        </section>
+<BattleLog/>
 
         {/* SIDEQUESTS */}
         <section className="space-y-6">
@@ -111,31 +87,4 @@ export default function PortfolioRemake() {
   );
 }
 
-function ProjectCard({ title, desc, tech }: { title: string, desc: string, tech: string[] }) {
-  return (
-    <div className="remake-panel remake-cut flex flex-col h-full group hover:border-[#00d4e8] hover:bg-black/40 transition-all duration-300">
-      <div className="p-6 flex-1 flex flex-col gap-4">
-        <h3 className="font-rajdhani text-2xl font-bold tracking-widest text-white group-hover:text-glow-teal flex items-center gap-2">
-          <Disc className="w-5 h-5 text-[#00d4e8]" />
-          {title}
-        </h3>
-        <p className="text-[#94a3b8] leading-relaxed text-sm flex-1">{desc}</p>
-        
-        <div className="flex flex-wrap gap-2 mt-4">
-          {tech.map(t => (
-            <span key={t} className="text-xs text-[#00d4e8] bg-[#00d4e8]/10 border border-[#00d4e8]/20 px-2 py-1 tracking-wider">
-              {t}
-            </span>
-          ))}
-        </div>
-      </div>
-      
-      <div className="border-t border-[#00d4e8]/20 p-4 flex justify-end">
-        <button className="flex items-center gap-2 font-rajdhani text-lg tracking-widest text-[#94a3b8] group-hover:text-[#00d4e8] transition-colors">
-          VIEW MISSION
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </button>
-      </div>
-    </div>
-  );
-}
+
