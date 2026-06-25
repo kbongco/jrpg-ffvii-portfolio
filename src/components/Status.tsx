@@ -26,7 +26,7 @@ export default function Status() {
             </div>
           </div>
 
-          {/* MATERIA LOADOUT */}
+
           <div className="md:col-span-8 remake-panel p-6 remake-cut flex flex-col">
             <h2 className="font-rajdhani text-3xl font-bold tracking-widest border-b border-[#00d4e8]/20 pb-2 mb-6">MATERIA LOADOUT</h2>
             
