@@ -9,16 +9,16 @@ export default function Status() {
             
             <div className="space-y-6">
               <StatRow label="Strength" category="Frontend" value={92} />
-              <StatRow label="Magic" category="TypeScript" value={88} />
-              <StatRow label="Vitality" category="DevOps" value={75} />
-              <StatRow label="Spirit" category="Design" value={95} />
-              <StatRow label="Luck" category="Debugging" value={80} />
+              <StatRow label="Magic" category="Backend" value={70} />
+              <StatRow label="Vitality" category="DevOps" value={60} />
+              <StatRow label="Spirit" category="Design" value={85} />
+              <StatRow label="Luck" category="Problem Solving" value={90} />
             </div>
 
             <div className="mt-8 pt-6 border-t border-[#00d4e8]/20 space-y-2">
               <div className="flex justify-between text-sm">
                 <span className="text-[#e040c0] font-bold tracking-widest text-glow-magenta">LIMIT BREAK</span>
-                <span className="text-white">OMNISLASH</span>
+                <span className="text-white">Developer who can design too!</span>
               </div>
               <div className="remake-bar-container h-3 w-full skew-x-[-15deg]">
                 <div className="remake-bar-fill-limit h-full w-[100%]" />
