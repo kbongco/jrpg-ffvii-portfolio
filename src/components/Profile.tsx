@@ -1,3 +1,4 @@
+import { cardData } from "@/data/sidequests";
 import { User } from "lucide-react";
 
 export default function Profile() {
@@ -35,11 +36,7 @@ export default function Profile() {
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              {[
-                { label: 'Experience', value: '3+ Years' },
-                { label: 'Projects Shipped', value: '20+' },
-                { label: 'Response Time', value: '< 24hrs' },
-              ].map(item => (
+              {cardData.map(item => (
                 <div key={item.label} className="bg-black/30 border border-[#00d4e8]/10 p-3 remake-cut-tl">
                   <div className="text-[#94a3b8] text-xs font-share-tech tracking-widest mb-1">{item.label.toUpperCase()}</div>
                   <div className="font-rajdhani font-bold text-lg text-white">{item.value}</div>
