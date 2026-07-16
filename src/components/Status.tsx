@@ -2,6 +2,7 @@ import StatRow from "./StatRow";
 import MateriaSlot from "./MateriaSlot";
 import { materia } from "@/data/sidequests";
 import { useState } from "react";
+import { stats } from "@/data/sidequests";
 
 export default function Status() {
 
@@ -15,11 +16,9 @@ export default function Status() {
         </h2>
 
         <div className="space-y-6">
-          <StatRow label="Strength" category="Frontend" value={92} />
-          <StatRow label="Magic" category="Backend" value={70} />
-          <StatRow label="Vitality" category="DevOps" value={60} />
-          <StatRow label="Spirit" category="Design" value={85} />
-          <StatRow label="Luck" category="Problem Solving" value={90} />
+          {stats.map((stat) => (
+            <StatRow label={stat.label} category={stat.category} value={stat.value}/>
+          ))}
         </div>
 
         <div className="mt-8 pt-6 border-t border-[#00d4e8]/20 space-y-2">

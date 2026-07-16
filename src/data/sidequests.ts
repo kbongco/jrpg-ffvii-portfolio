@@ -17,6 +17,12 @@ type CardData = {
   value: string;
 };
 
+type Stats = {
+  label: string;
+  category: string;
+  value: number;
+}
+
 export const sideQuests: SideQuests[] = [
   {
     title: "UI/UX Project - Deadlift Calculator ",
@@ -72,4 +78,12 @@ export const cardData:CardData[]= [
   { label: "Projects Shipped", value: "3-5" },
   { label: "Response Time", value: "< 24hrs" },
   { label: "Tech Stack", value: "React, Python" },
+];
+
+export const stats: Stats[] = [
+  { label: "Strength", category: "Frontend", value: 92 },
+  { label: "Magic", category: "Backend", value: 70 },
+  { label: "Vitality", category: "DevOps", value: 60 },
+  { label: "Spirit", category: "Design", value: 85 },
+  { label: "Luck", category: "Problem Solving", value: 90 }
 ];
