@@ -9,6 +9,7 @@ import {
   Star,
   BookOpen,
 } from "lucide-react";
+import Status from "./Status";
 
 export default function PortfolioMobile() {
   const [activeTab, setActiveTab] = useState("status");
@@ -83,40 +84,7 @@ export default function PortfolioMobile() {
 
           {/* Dynamic Content based on activeTab */}
           <main className="space-y-6 pb-6">
-            {activeTab === "status" && (
-              <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">
-                <h2 className="text-[#00d4e8] font-bold text-xl uppercase tracking-wider flex items-center gap-2">
-                  <User className="w-5 h-5" /> Status
-                </h2>
-
-                <div className="space-y-4">
-                  {[
-                    { name: "REACT / NEXT.JS", val: 92 },
-                    { name: "TYPESCRIPT", val: 88 },
-                    { name: "TAILWIND CSS", val: 95 },
-                    { name: "NODE.JS", val: 82 },
-                  ].map((skill, i) => (
-                    <div key={i} className="space-y-1">
-                      <div className="flex justify-between font-share-tech text-sm">
-                        <span className="text-white uppercase">
-                          {skill.name}
-                        </span>
-                        <span className="text-[#00d4e8]">LV. MAX</span>
-                      </div>
-                      <div className="remake-bar-container h-1.5 w-full">
-                        <div
-                          className="remake-bar-fill-hp h-full"
-                          style={{
-                            width: `${skill.val}%`,
-                            transitionDelay: `${i * 100}ms`,
-                          }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+            {activeTab === "status" && <Status variant="mobile" />}
 
             {activeTab === "materia" && (
               <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">

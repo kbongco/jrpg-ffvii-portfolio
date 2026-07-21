@@ -1,3 +1,5 @@
+import { User, BookOpen, Hexagon, Code, Star, Mail } from "lucide-react";
+
 type SideQuests = {
   title: string;
   reward: string;
@@ -21,6 +23,18 @@ type Stats = {
   label: string;
   category: string;
   value: number;
+}
+
+type TabNames = { 
+  id: string;
+  icon: any;
+  label: string;
+}
+
+type Jobs = {
+  title: string;
+  desc: string;
+  tech: string[]
 }
 
 export const sideQuests: SideQuests[] = [
@@ -86,4 +100,46 @@ export const stats: Stats[] = [
   { label: "Vitality", category: "DevOps", value: 60 },
   { label: "Spirit", category: "Design", value: 85 },
   { label: "Luck", category: "Problem Solving", value: 90 }
+];
+
+export const tabNames: TabNames[] = [
+    { id: "status", icon: User, label: "STATUS" },
+    { id: "about", icon: BookOpen, label: "PROFILE" },
+    { id: "materia", icon: Hexagon, label: "MATERIA" },
+    { id: "projects", icon: Code, label: "DATA" },
+    { id: "sidequests", icon: Star, label: "QUESTS" },
+    { id: "contact", icon: Mail, label: "COMM" },
+]
+
+export const jobTitles: Jobs[] = [
+  {
+    title: "New World Group - Front End Developer (Contract) (1/2026 - 3/2026)",
+    desc: "A contract role supporting the dev team with managing 100s of client sites. Building various components, and adding gtags for marketing",
+    tech: ["React", "Next.js", "CMS Systems", "PHP"],
+  },
+  {
+    title: "Self Employed/Caregiving (3/2023 - present)",
+    desc: "A mini career break was taken to caregive for an ailing family member. During this time, I never stopped learning coding and improving my skills. Including a project called ClearBench was made",
+    tech: ["React.js", "Typescript", "Next.js", "Python", "CI/CD", "FastAPI", "Design Skills"],
+  },
+  {
+    title: "EY Design Studio - UX Engineer (2/2022 - 3/2023)",
+    desc: "A role supporting one of the large HVAC clients, migrating their sharepoint sites to more accessible Angular Sites.",
+    tech: ["Angular", "Typescript"],
+  },
+  {
+    title: "Verizon via Infovision - Junior Software Developer (3/2021 - 2/2022)",
+    desc: "A role within the Gen Z team at Verizon supporting with redesigning the verizon retail site",
+    tech: ["React.js", "QA Testing", "Accessibility"],
+  },
+  {
+    title: "General Assembly - Software Engineer Fellow (6/2020 - 9/2020)",
+    desc: "Attended a 3 month long coding bootcamp to learn full stack development. Completed various projects and worked with our sister design cohort",
+    tech: ["React.js", "Ruby on Rails", "Node.js", "Ruby", "Express.js", "Mongoose", "SQL"],
+  },
+  {
+    title: "Various Science Lab roles (2014 - 2019)",
+    desc: "Prior to career changing to SWE, I used to work in the food industry working in the lab. I picked up transferable skills useful for development.",
+    tech: ["lab skills", "domain knowledge", "teamwork", "data analysis"],
+  },
 ];
